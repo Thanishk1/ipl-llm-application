@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL Stats & Analyst</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        h1 { color: #d32f2f; }
+        select, input, button { padding: 8px; margin: 5px 0; font-size: 14px; }
+        select, input { width: 100%; box-sizing: border-box; }
+        button { background: #d32f2f; color: white; border: none; cursor: pointer; padding: 10px 20px; }
+        button:hover { background: #b71c1c; }
+        .section { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        #stats_result, #ask_result { background: #f5f5f5; padding: 15px; border-radius: 6px; margin-top: 15px; white-space: pre-wrap; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        td { padding: 6px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <h1>🏏 IPL Stats & Analyst</h1>
+
+    <div class="section">
+        <h2>Player Stats</h2>
+        <label>Team</label>
+        <select id="team_select"></select>
+
+        <label>Season</label>
+        <select id="season_select"></select>
+
+        <label>Player</label>
+        <select id="player_select"></select>
+
+        <button onclick="fetchBattingStats()">Get Batting Stats</button>
+        <button onclick="fetchBowlingStats()">Get Bowling Stats</button>
+
+        <div id="stats_result"></div>
+    </div>
+
+    <div class="section">
+        <h2>Ask the Analyst</h2>
+        <input type="text" id="ask_input" placeholder="e.g. how did rcb vs csk 2026 go?">
+        <button onclick="askQuestion()">Ask</button>
+        <div id="ask_result"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
